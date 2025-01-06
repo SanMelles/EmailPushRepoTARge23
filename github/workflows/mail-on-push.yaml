@@ -22,5 +22,5 @@ jobs:
                 Honesty and promise me, I'm never gonna find you fake it
                 No, no, no OKOKOK lol
         to: sandermelles@gmail.com       
-        from: Github Actions
+        from: "Github Actions"
         

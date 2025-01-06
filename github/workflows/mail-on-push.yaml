@@ -8,10 +8,10 @@ jobs:
       uses: dawidd6/action-send-mail@v3
       with:
         server_address: smtp.gmail.com
-        server_port: 587 #comment
+        server_port: 465 #comment
         username: ${{ secrets.MAIL_USERNAME}}
         password: ${{ secrets.MAIL_PASSWORD}}
-        subject: You've got mail!
+        subject: "You've got mail!"
         body: |
                 Why'd you have to go and make things so complicated?
                 I see the way you're

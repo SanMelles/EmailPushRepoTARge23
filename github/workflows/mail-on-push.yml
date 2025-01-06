@@ -18,7 +18,7 @@ jobs:
             Hello,
             
             A new push was made to the repository ${{ github.repository }}.
-            
+            LOL
             Commit Info:
             - Author: ${{ github.event.pusher.name }}
             - Message: ${{ github.event.head_commit.message }}
@@ -26,3 +26,4 @@ jobs:
             Regards,
             GitHub Actions
           to: "sander.melles@gmail.com"
+          from: "Github Actions"

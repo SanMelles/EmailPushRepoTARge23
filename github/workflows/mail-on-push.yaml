@@ -21,6 +21,6 @@ jobs:
                 And you take what you get and you turn it into
                 Honesty and promise me, I'm never gonna find you fake it
                 No, no, no OKOKOK lol
-        to: sandermelles@gmail.com       
+        to: sander.melles@gmail.com       
         from: ${{ secrets.MAIL_USERNAME }}
         

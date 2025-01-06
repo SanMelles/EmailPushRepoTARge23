@@ -1,19 +1,28 @@
+name: Mail on Push
 
 on: [push]
+
 jobs:
   mail_on_push:
-    runs_on: ubuntu-latest
-    steps: 
-    - name: Send Mail
-      uses: dawidd6/action-send-mail@v3
-      with:
-        server_address: smtp.gmail.com
-        server_port: 587 #comment
-        username: ${{ secrets.MAIL_USERNAME}}
-        password: ${{ secrets.MAIL_PASSWORD}}
-        subject: "You've got mail!"
-        body: |
-              New Commit to Repo ${{ github.repository }} From ${{ github.event.pusher.name }}
-        to: sander.melles@gmail.com       
-        from: ${{ secrets.MAIL_USERNAME }}
-        
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send Mail
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 587
+          username: ${{ secrets.MAIL_USERNAME }}
+          password: ${{ secrets.MAIL_PASSWORD }}
+          subject: "Push Notification from ${{ github.repository }}"
+          body: |
+            Hello,
+            
+            A new push was made to the repository ${{ github.repository }}.
+            
+            Commit Info:
+            - Author: ${{ github.event.pusher.name }}
+            - Message: ${{ github.event.head_commit.message }}
+            
+            Regards,
+            GitHub Actions
+          to: "sander.melles@gmail.com"
